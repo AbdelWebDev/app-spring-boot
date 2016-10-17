@@ -4,7 +4,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-import org.opendevup.dao.etudiantRepository;
+import org.opendevup.dao.EtudiantRepository;
 import org.opendevup.entities.Etudiant;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,14 +17,30 @@ public class AppSpringMvcApplication {
 
 	public static void main(String[] args) throws ParseException {
 		ApplicationContext ctx = SpringApplication.run(AppSpringMvcApplication.class, args);
-		etudiantRepository etudiantRepository = ctx.getBean(etudiantRepository.class);
+		EtudiantRepository etudiantRepository = ctx.getBean(EtudiantRepository.class);
 		DateFormat dt = new SimpleDateFormat("yyyy-MM-dd");
 		etudiantRepository.save(new Etudiant("amri", dt.parse("1993-01-19"), "abdelouhabamri@hotmail.com",
 				"/home/toshiba/photo/abdel.png"));
 		etudiantRepository
 				.save(new Etudiant("pierre", dt.parse("2000-01-19"), "piere@gmail.com", "/home/toshiba/photo/p.png"));
+		etudiantRepository.save(new Etudiant("amri", dt.parse("1993-01-19"), "abdelouhabamri@hotmail.com",
+				"/home/toshiba/photo/abdel.png"));
+		etudiantRepository
+				.save(new Etudiant("jean", dt.parse("2000-01-19"), "jean@gmail.com", "/home/toshiba/photo/j.png"));
+		etudiantRepository
+				.save(new Etudiant("sam", dt.parse("1993-01-19"), "sam@hotmail.com", "/home/toshiba/photo/s.png"));
+		etudiantRepository
+				.save(new Etudiant("dave", dt.parse("2000-01-19"), "dave@gmail.com", "/home/toshiba/photo/d.png"));
+		etudiantRepository
+				.save(new Etudiant("dav", dt.parse("1993-01-19"), "dav@hotmail.com", "/home/toshiba/photo/abdel.png"));
+		etudiantRepository.save(
+				new Etudiant("clément", dt.parse("2000-01-19"), "clément@gmail.com", "/home/toshiba/photo/p.png"));
+		etudiantRepository
+				.save(new Etudiant("ibrih", dt.parse("1993-01-19"), "ibrih@hotmail.com", "/home/toshiba/photo/ib.png"));
+		etudiantRepository
+				.save(new Etudiant("lam", dt.parse("2000-01-19"), "lam@gmail.com", "/home/toshiba/photo/s.png"));
 
-		Page<Etudiant> etds= etudiantRepository.findAll(new PageRequest(0, 5));
+		Page<Etudiant> etds = etudiantRepository.findAll(new PageRequest(0, 5));
 		etds.forEach(e -> System.out.println(e.getNom()));
 	}
 }

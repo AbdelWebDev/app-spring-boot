@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-public interface etudiantRepository extends JpaRepository<Etudiant, Long> {
+public interface EtudiantRepository extends JpaRepository<Etudiant, Long> {
 	public List<Etudiant> findByNom(String nom);
 
 	public Page<Etudiant> findByNom(String nom, Pageable page);

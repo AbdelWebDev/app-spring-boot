@@ -17,7 +17,7 @@ public class Etudiant implements Serializable {
 	@Id
 	@GeneratedValue
 	private Long id;
-	@Column (name="NOM", length=30)
+	@Column (name="nom", length=30)
 	private String nom;
 	private Date dateNaissance;
 	private String email;
