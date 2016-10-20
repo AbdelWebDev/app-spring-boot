@@ -1,5 +1,6 @@
 package org.opendevup.web;
 
+import java.util.Date;
 import java.util.List;
 
 import org.opendevup.dao.EtudiantRepository;
@@ -39,8 +40,9 @@ public class etudiantController {
 	}
 	
 	@RequestMapping (value="/form",method=RequestMethod.GET)
-	public String formEtudiant(){
+	public String formEtudiant(Model model){
 		
+		model.addAttribute("etudiant",new Etudiant());
 		return "formEtudiant";
 	}
 }
