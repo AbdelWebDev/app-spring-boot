@@ -10,6 +10,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -35,5 +36,11 @@ public class etudiantController {
 		model.addAttribute("motCle",mc);
 		
 		return "etudiants";
+	}
+	
+	@RequestMapping (value="/form",method=RequestMethod.GET)
+	public String formEtudiant(){
+		
+		return "formEtudiant";
 	}
 }
