@@ -10,6 +10,15 @@ th:href="@{/css/mystyle.css}" />
 </head>
 <body>
 	<div class="container spacer">
+	<div class="container">
+		<form th:action="@{Index}" method="get">
+			<div class="form-search">
+				<label>Mot clé:</label>
+				<input type="text" name="motCle" th:value="${motCle}"></input>
+				<button type="submit">Chercher</button>
+			</div>
+		</form>
+	</div>
 	<table class="table table-striped">
 		<thead>
 			<tr>
@@ -31,7 +40,7 @@ th:href="@{/css/mystyle.css}" />
 	
 	 <ul class="nav nav-pills">
 	 	<li th:each="p:${pages}" th:class="${p==pageCourante}?active:''">
-	 		<a th:text="${p}" th:href="@{Index(page=${p})}"></a>
+	 		<a th:text="${p}" th:href="@{Index(page=${p},motCle=${motCle})}"></a>
 	 	</li>
 	 </ul>
 	
