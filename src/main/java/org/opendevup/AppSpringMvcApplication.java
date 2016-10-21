@@ -19,7 +19,8 @@ public class AppSpringMvcApplication {
 		ApplicationContext ctx = SpringApplication.run(AppSpringMvcApplication.class, args);
 		EtudiantRepository etudiantRepository = ctx.getBean(EtudiantRepository.class);
 		DateFormat dt = new SimpleDateFormat("yyyy-MM-dd");
-		etudiantRepository.save(new Etudiant("amri", dt.parse("1993-01-19"), "abdelouhabamri@hotmail.com",
+		
+		etudiantRepository.save(new Etudiant("amria", dt.parse("1993-01-19"), "abdelouhabamri@hotmail.com",
 				"/home/toshiba/photo/abdel.png"));
 		etudiantRepository
 				.save(new Etudiant("pierre", dt.parse("2000-01-19"), "piere@gmail.com", "/home/toshiba/photo/p.png"));
@@ -28,17 +29,17 @@ public class AppSpringMvcApplication {
 		etudiantRepository
 				.save(new Etudiant("jean", dt.parse("2000-01-19"), "jean@gmail.com", "/home/toshiba/photo/j.png"));
 		etudiantRepository
-				.save(new Etudiant("sam", dt.parse("1993-01-19"), "sam@hotmail.com", "/home/toshiba/photo/s.png"));
+				.save(new Etudiant("sami", dt.parse("1993-01-19"), "sam@hotmail.com", "/home/toshiba/photo/s.png"));
 		etudiantRepository
 				.save(new Etudiant("dave", dt.parse("2000-01-19"), "dave@gmail.com", "/home/toshiba/photo/d.png"));
 		etudiantRepository
-				.save(new Etudiant("dav", dt.parse("1993-01-19"), "dav@hotmail.com", "/home/toshiba/photo/abdel.png"));
+				.save(new Etudiant("david", dt.parse("1993-01-19"), "dav@hotmail.com", "/home/toshiba/photo/abdel.png"));
 		etudiantRepository.save(
 				new Etudiant("clément", dt.parse("2000-01-19"), "clément@gmail.com", "/home/toshiba/photo/p.png"));
 		etudiantRepository
 				.save(new Etudiant("ibrih", dt.parse("1993-01-19"), "ibrih@hotmail.com", "/home/toshiba/photo/ib.png"));
 		etudiantRepository
-				.save(new Etudiant("laa", dt.parse("2000-01-19"), "lam@gmail.com", "/home/toshiba/photo/s.png"));
+				.save(new Etudiant("leaa", dt.parse("2000-01-19"), "lam@gmail.com", "/home/toshiba/photo/s.png"));
 		etudiantRepository.save(new Etudiant("amra", dt.parse("1993-01-19"), "abdelouhabamri@hotmail.com",
 				"/home/toshiba/photo/abdel.png"));
 		etudiantRepository

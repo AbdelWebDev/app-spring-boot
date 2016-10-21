@@ -3,6 +3,8 @@ package org.opendevup.web;
 import java.util.Date;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.opendevup.dao.EtudiantRepository;
 import org.opendevup.entities.Etudiant;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -48,8 +51,10 @@ public class etudiantController {
 	}
 
 	@RequestMapping(value = "/SaveEtudiant", method = RequestMethod.POST)
-	public String save(Etudiant et) {
-
+	public String save(@Valid Etudiant et, BindingResult bindingResult) {
+		if(bindingResult.hasErrors()){
+			return "formEtudiant";
+		}
 		etudiantRepository.save(et);
 
 		return "redirect:Index";
