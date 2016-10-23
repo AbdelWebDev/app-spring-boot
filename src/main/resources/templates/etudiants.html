@@ -10,10 +10,10 @@
 	th:href="@{/css/mystyle.css}" />
 </head>
 <body>
-	<div class="container spacer">
+	<div class="container-fluid spacer">
 		<a th:href="@{form}"> saisir un etudiant</a>
 	</div>
-	<div class="container spacer">
+	<div class="container-fluid spacer">
 		<div class="container">
 			<form th:action="@{Index}" method="get">
 				<div class="form-group">
@@ -44,7 +44,7 @@
 			</tbody>
 		</table>
 	</div>
-	<div class="container">
+	<div class="container-fluid">
 
 		<ul class="nav nav-pills">
 			<li th:each="p:${pages}" th:class="${p==pageCourante}?active:''">
