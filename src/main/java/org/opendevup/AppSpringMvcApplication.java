@@ -5,7 +5,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 import org.opendevup.dao.EtudiantRepository;
+import org.opendevup.dao.ParabeneRepository;
 import org.opendevup.entities.Etudiant;
+import org.opendevup.entities.Parabene;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -18,6 +20,8 @@ public class AppSpringMvcApplication {
 	public static void main(String[] args) throws ParseException {
 		ApplicationContext ctx = SpringApplication.run(AppSpringMvcApplication.class, args);
 		EtudiantRepository etudiantRepository = ctx.getBean(EtudiantRepository.class);
+		ParabeneRepository pb= ctx.getBean(ParabeneRepository.class);
+		pb.save(new Parabene("libb"));
 		DateFormat dt = new SimpleDateFormat("yyyy-MM-dd");
 		
 		etudiantRepository.save(new Etudiant("amria", dt.parse("1993-01-19"), "abdelouhabamri@hotmail.com",
