@@ -74,6 +74,7 @@ public class etudiantController {
 
 		return "redirect:Index";
 	}
+
 	
 	@Secured("ADMIN")
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
@@ -82,4 +83,5 @@ public class etudiantController {
 		model.addAttribute("etudiant", new Etudiant());
 		return "formEtudiant";
 	}
+
 }
